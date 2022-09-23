@@ -113,7 +113,7 @@ function containsRepeatingLetter(str) {
 }
 
 // JS74 获取指定字符串
-captureThreeNumbers('abcdef123')
+// captureThreeNumbers('abcdef123')
 //正则匹配出三个连续数字，然后再判断是否连续
 function captureThreeNumbers(str) {
   const arr = str.match(/\d{3}/)
@@ -127,13 +127,60 @@ function captureThreeNumbers(str) {
   }
   return false
 }
+// input.replace(/[\n]/g,'').split('');
+// JS75 判断是否符合指定格式
+// matchesPattern('444-333-4442')
+function matchesPattern(str) {
+  let a = str.split('-')
+  return (a[0].length === 3 && !isNaN(a[0]) && a[1].length === 3 && !isNaN(a[1]) && a[2].length === 4 && !isNaN(a[2]));
+}
+
+// JS46 斐波那契数列
+function fibonacci(n) {
+    if(n<=2) {
+      return 1
+    } else {
+      return fibonacci(n-1)+fibonacci(n-2)
+    }
+}
 
 
+// JS62 柯里化
+function curryIt(fn) {
 
+}
 
+// JS65 二进制转换
+// base10(11000000)
+// function base10(str) {
+//     return parseInt(str,2)
+// }
 
+// JS67 乘法 
+// multiply(3, 0.0001)
+// function multiply(a, b) {
+//   console.log(b.toString().split('.')[1].length);
+// }
 
+// 数组去重
+const a = [1,2,3,4,4,4,5,5,6,6,7];
+const b = [1,2,3,4];
+const c = [4,5,6];
 
-
-
-
+const d = [1,2,3,4,5];
+const e = [4,5,6];
+sameRemova()
+function sameRemova(){
+  for(let i= 0;i < a.length; i++) {
+    for(let j=i+1; j < a.length; j++) {
+      if(a[i] === a[j]) {
+        a.splice(i,1);
+        i--;
+        console.log(object);
+        a.splice(j,1);
+        j--;
+      }
+    }
+  }
+  console.log(a);
+}
