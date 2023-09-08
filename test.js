@@ -184,3 +184,29 @@ function sameRemova(){
   }
   console.log(a);
 }
+// 1. 两数之和
+// 暴力破解
+// var twoSum = function(nums, target) {
+//   for(let i=0;i<nums.length;i++) {
+//       for(let j=i+1;j<nums.length;j++) {
+//           if(nums[i]+nums[j] === target) {
+//             return [i,j]
+//           }
+//       }
+//   }
+// };
+// 哈希表
+// var twoSum = function (nums, target) {
+//   let hash = {};
+//   for (let i = 0; i < nums.length; i++) {
+//     if (hash[target - nums[i]] !== undefined) {
+//       if(i>hash[target - nums[i]]) {
+//         return [hash[target - nums[i]],i]
+//       } 
+//       return [i, hash[target - nums[i]]];
+//     }
+//     hash[nums[i]] = i;
+//   }
+//   return [];
+// };
+// console.log(twoSum([1,2,3,4,5,6,7],13));
