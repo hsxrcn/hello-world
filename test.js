@@ -210,3 +210,13 @@ function sameRemova(){
 //   return [];
 // };
 // console.log(twoSum([1,2,3,4,5,6,7],13));
+
+// 原型
+// function Foo() {}
+// let f1 = new Foo()
+// console.log(f1);
+// console.log('f1.__proto__',f1.__proto__);
+// console.log('Foo.prototype',Foo.prototype);
+// console.log('f1.constructor',f1.constructor);
+// console.log('Foo.prototype.constructor',Foo.prototype.constructor);
+// console.log('Foo.constructor',Foo.constructor);
