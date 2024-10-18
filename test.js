@@ -136,13 +136,13 @@ function matchesPattern(str) {
 }
 
 // JS46 斐波那契数列
-function fibonacci(n) {
-    if(n<=2) {
-      return 1
-    } else {
-      return fibonacci(n-1)+fibonacci(n-2)
-    }
-}
+// function fibonacci(n) {
+//     if(n<=2) {
+//       return 1
+//     } else {
+//       return fibonacci(n-1)+fibonacci(n-2)
+//     }
+// }
 
 
 // JS62 柯里化
@@ -163,27 +163,27 @@ function curryIt(fn) {
 // }
 
 // 数组去重
-const a = [1,2,3,4,4,4,5,5,6,6,7];
-const b = [1,2,3,4];
-const c = [4,5,6];
+// const a = [1,2,3,4,4,4,5,5,6,6,7];
+// const b = [1,2,3,4];
+// const c = [4,5,6];
 
-const d = [1,2,3,4,5];
-const e = [4,5,6];
-sameRemova()
-function sameRemova(){
-  for(let i= 0;i < a.length; i++) {
-    for(let j=i+1; j < a.length; j++) {
-      if(a[i] === a[j]) {
-        a.splice(i,1);
-        i--;
-        console.log(object);
-        a.splice(j,1);
-        j--;
-      }
-    }
-  }
-  console.log(a);
-}
+// const d = [1,2,3,4,5];
+// const e = [4,5,6];
+// sameRemova()
+// function sameRemova(){
+//   for(let i= 0;i < a.length; i++) {
+//     for(let j=i+1; j < a.length; j++) {
+//       if(a[i] === a[j]) {
+//         a.splice(i,1);
+//         i--;
+//         console.log(object);
+//         a.splice(j,1);
+//         j--;
+//       }
+//     }
+//   }
+//   console.log(a);
+// }
 // 1. 两数之和
 // 暴力破解
 // var twoSum = function(nums, target) {
@@ -220,3 +220,41 @@ function sameRemova(){
 // console.log('f1.constructor',f1.constructor);
 // console.log('Foo.prototype.constructor',Foo.prototype.constructor);
 // console.log('Foo.constructor',Foo.constructor);
+
+// 2631. 分组
+
+// Array.prototype.groupBy = function(fn) {
+//   let result = {};
+//   for(let i = 0;i<this.length;i++) {
+//      let key = fn(this[i])
+//      console.log('key',key);
+//      console.log('this[i]',this[i]);
+//      if(result[key]) {
+//        result[key].push(this[i])
+//      } else {
+//        result[key] = [this[i]]
+//      }
+//   }
+//   console.log('result',result);
+//   return result
+// };
+// 测试用例1
+// array = [
+//   {"id":"1"},
+//   {"id":"1"},
+//   {"id":"2"}
+// ],
+// fn = function(item) {
+//   return item.id;
+// };
+// 测试用例2
+// array = [[1,2,3],[1,3,5],[1,5,9]]
+// fn = function (list) { return String(list[0]); }
+// 测试用例3
+// array = [1,2,3,4,5,6,7,8,9,10]
+// fn = function (n) { return String(n > 5); }
+// 测试用例4
+// array = [[1,2,3,4,5,6,7,8,9]]
+// fn = function (list) { return String(list.length); }
+// array.groupBy(fn);
+
