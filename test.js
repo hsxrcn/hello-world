@@ -258,3 +258,31 @@ function curryIt(fn) {
 // fn = function (list) { return String(list.length); }
 // array.groupBy(fn);
 
+// 分组（应用于将两个列表上的数据合并）
+// const persons = [
+//   { name: 'Alice', birthYear: 1990 },
+//   { name: 'Bob', birthYear: 1972 },
+//   { name: 'Jose', birthYear: 1999 },
+//   { name: 'Claudia', birthYear: 1974 },
+//   { name: 'Marcos', birthYear: 1995 }
+// ];
+
+// const decades = [
+//   { start: 1970, theme: 'Disco' },
+//   { start: 1980, theme: 'Arcades' },
+//   { start: 1990, theme: 'Beanie Babies' }
+// ];
+
+// const groupedByDecade = persons.groupBy((person) =>  {
+//   const decade = Math.floor(person.birthYear / 10) * 10;
+//   return String(decade);
+// });
+
+// const decadesWithPeople = decades.map((decade) => {
+//   return { 
+//     ...decade,
+//     people: groupedByDecade[decade.start] || [],
+//   };
+// });
+// console.log('decadesWithPeople',decadesWithPeople);
+
