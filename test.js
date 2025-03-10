@@ -298,20 +298,57 @@ function curryIt(fn) {}
 // console.log('decadesWithPeople',decadesWithPeople);
 
 // URL参数拼接
-let QUERY = 'isWkWeb=1&enableAjaxHook=0';
-let addQuery = (v) => {
-	const _url = new URL(v);
-	const _params = new URLSearchParams(_url.search);
-	for (const item of QUERY.split('&')) {
-    console.log('item',item);
-		if (item) {
-			const itemChild = item.split('=');
-			_params.append(itemChild[0], itemChild[1]);
-		}
-	}
-	_url.search = _params;
-	console.log(_url.href);
-	return _url.href;
-};
-let u = addQuery('http://www.baidu.com');
-console.log('URl',typeof u);
+// let QUERY = 'isWkWeb=1&enableAjaxHook=0';
+// let addQuery = (v) => {
+// 	const _url = new URL(v);
+// 	const _params = new URLSearchParams(_url.search);
+// 	for (const item of QUERY.split('&')) {
+//     console.log('item',item);
+// 		if (item) {
+// 			const itemChild = item.split('=');
+// 			_params.append(itemChild[0], itemChild[1]);
+// 		}
+// 	}
+// 	_url.search = _params;
+// 	console.log(_url.href);
+// 	return _url.href;
+// };
+// let u = addQuery('http://www.baidu.com');
+// console.log('URl',typeof u);
+
+// call的基本使用
+const person = {
+  name: 'tom',
+  say: function(message) {
+    console.log(`${this.name} say ${message}`);
+  }
+}
+const student = {
+  name: 'jerry'
+}
+person.say.call(student,'hello');
+
+// apply的基本使用
+const person2 = {
+  name: 'tom',
+  say: function(message1, message2) {
+    console.log(`${this.name} say ${message1} ${message2}`);
+  }
+}
+const student2 = {
+  name: 'jerry'
+}
+person2.say.apply(student2,['hello', 'world']);
+
+// bind的基本使用
+const person3 = {
+  name: 'tom',
+  say: function(message) {
+    console.log(`${message} ${this.name} say hello`);
+  }
+}
+const student3 = {
+  name: 'jerry'
+}
+const say = person3.say.bind(student3, '2s');
+setTimeout(say, 2000);
