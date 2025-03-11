@@ -352,3 +352,49 @@ const student3 = {
 }
 const say = person3.say.bind(student3, '2s');
 setTimeout(say, 2000);
+
+// 手写call
+Function.prototype.myCall = function(context) {
+  if (typeof context === undefined || context === null) {
+    context = window;
+  }
+  const symbol = Symbol();
+  context[symbol] = this;
+  const arg = [...arguments].slice(1);
+  const result = context[symbol](...arg);
+  delete context[symbol];
+  return result;
+}
+// 手写apply
+Function.prototype.myApply = function(context) {
+  if (typeof context === undefined || context === null) {
+    context = window;
+  }
+  const symbol = Symbol();
+  context[symbol] = this;
+  let result;
+  if(arguments[1]) {
+    result = context[symbol](...arguments[1]);
+  } else {
+    result = context[symbol]();
+  }
+  delete context[symbol];
+  return result;
+}
+// 手写bind
+Function.prototype.myBind = function (context) {
+  // 处理 context 为 undefined 或 null 的情况
+  if (typeof context === undefined || context === null) {
+    context = window; // 默认绑定到全局对象
+  }
+  const that = this;
+  const args = [...arguments].slice(1);
+  return function F() {
+    // 处理构造函数情况
+    if(this instanceof F) {
+      return new that(...args, ...arguments);
+    }
+    // 处理普通函数调用
+    return that.apply(context, args.concat(...arguments));
+  }
+}
